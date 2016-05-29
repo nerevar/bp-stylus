@@ -14,12 +14,13 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('autoprefixer-stylus'),
     uglify = require('gulp-uglify'),
+    babel = require('gulp-babel'),
     concat = require('gulp-concat'),
-    jshint = require('gulp-jshint'),
+    // axis = require('axis'),
+    // jeet = require('jeet'),
+    // rupture = require('rupture'),
     stylish = require('jshint-stylish'),
-    axis = require('axis'),
-    jeet = require('jeet'),
-    rupture = require('rupture');
+    jshint = require('gulp-jshint');
 
 //
 // Sources
@@ -75,11 +76,16 @@ gulp.task('stylus', function () {
 //
 gulp.task('scripts', function () {
     return gulp.src(sources.js)
-        .pipe(jshint()
+        .pipe(jshint({ esversion: 6 })
             .on('error', gutil.beep))
         .pipe(jshint.reporter(stylish))
         .pipe(plumber())
-        .pipe(concat('main.js'))
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(concat('all.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(destinations.js))
         // .pipe(uglify())
         // .pipe(gulp.dest(destinations.js))
