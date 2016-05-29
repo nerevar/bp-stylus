@@ -81,8 +81,8 @@ gulp.task('scripts', function () {
         .pipe(plumber())
         .pipe(concat('main.js'))
         .pipe(gulp.dest(destinations.js))
-        .pipe(uglify())
-        .pipe(gulp.dest(destinations.js))
+        // .pipe(uglify())
+        // .pipe(gulp.dest(destinations.js))
         .pipe(connect.reload());
 });
 
@@ -90,8 +90,8 @@ gulp.task('vendorjs', function () {
     return gulp.src(sources.vendorjs)
         .pipe(plumber())
         .pipe(concat('vendor.js'))
-        .pipe(gulp.dest(destinations.js))
-        .pipe(uglify())
+        // .pipe(gulp.dest(destinations.js))
+        // .pipe(uglify())
         .pipe(gulp.dest(destinations.js));
 });
 
