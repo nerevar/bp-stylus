@@ -61,8 +61,8 @@ body {
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    //width: 90%;
+    //margin: 0 5%;
 }
 
 /* ===================
@@ -82,10 +82,6 @@ body {
 .footer-container,
 .main aside {
     background: #f16529;
-}
-
-.title {
-    color: white;
 }
 
 /* ==============
@@ -125,7 +121,7 @@ nav a:hover {
    ============== */
 
 .main {
-    padding: 30px 0;
+    //padding: 30px 0;
 }
 
 .main article h1 {
@@ -134,7 +130,7 @@ nav a:hover {
 
 .main aside {
     color: white;
-    padding: 0px 5% 10px;
+    //padding: 0px 5% 10px;
 }
 
 .footer-container footer {
@@ -195,9 +191,9 @@ nav a:hover {
         WIDE: Menu
        ============ */
 
-    .title {
-        float: left;
-    }
+    //.title {
+    //    float: left;
+    //}
 
     nav {
         float: right;
@@ -226,8 +222,8 @@ nav a:hover {
        =============== */
 
     .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
-        margin: 0 auto;
+        //width: 1026px; /* 1140px - 10% for margins */
+        //margin: 0 auto;
     }
 }
 
@@ -274,3 +270,41 @@ nav a:hover {
 .clearfix:after {
     clear: both;
 }
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'textbook';
+
+    src: local('textbook');
+    src: url('../fonts/i-font_face_textbook.woff'),
+            url('../fonts/i-font_face_textbook.ttf');
+}
+
+.b-page {
+    font-family: 'textbook', arial, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.stub {
+    height: 1px
+}
+
+.page
+    height: 100vh;
+    position: relative;
+    text-align: center;
+
+.page_pos_1 .title
+    margin-top: 50px
+    font-weight: normal
+    font-size: 2.5em
+    line-height 1.3em
